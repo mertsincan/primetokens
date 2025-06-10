@@ -1,0 +1,32 @@
+name: Prime Tokens
+description: Update Prime Tokens
+
+on:
+    push:
+        paths:
+            - 'tokens.json'
+
+permissions:
+    contents: write
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                node-version: 18
+
+            - name: Run update script
+              run: node scripts/updateTokens.mjs
+
+            - name: Commit changes
+              run: |
+                git config user.name "GitHub Actions Bot"
+                git config user.email "<>"
+                git commit -a -m "Update Prime Tokens" || echo "No changes to commit"
+                git push
