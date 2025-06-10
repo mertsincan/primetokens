@@ -1,16 +1,16 @@
-name: Prime Tokens
-description: Update Prime Tokens
+name: PrimeTokens
 
 on:
     push:
         paths:
-            - 'tokens2.json'
+            - 'tokens.json'
 
 permissions:
     contents: write
 
 jobs:
-    build:
+    generate-tokens:
+        name: Generate Prime Tokens
         runs-on: ubuntu-latest
         steps:
             - name: Checkout repository
@@ -20,5 +20,5 @@ jobs:
               uses: mertsincan/primetokens@main
               with:
                 PUBLIC_KEY: ${{ secrets.PRIME_TOKEN_PUBLIC_KEY }}
-                TOKENS_PATH: 'tokens2.json'
+                TOKENS_PATH: 'tokens.json'
                 OUTPUT_DIR: './dist'
