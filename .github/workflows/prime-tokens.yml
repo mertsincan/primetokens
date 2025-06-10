@@ -12,25 +12,11 @@ permissions:
 jobs:
     build:
         runs-on: ubuntu-latest
-        env:
-            DESIGNER_API_URL: https://www.primevue.com
-            PRIME_TOKEN: ${{ secrets.PRIME_TOKEN }}
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3
 
-            - name: Set up Node.js
-              uses: actions/setup-node@v3
+            - name: Generate Prime Tokens
+              uses: mertsincan/primetokens@main
               with:
-                node-version: 18
-
-            - name: Run update script
-              run: node scripts/updateTokens.mjs
-
-            - name: Commit changes
-              run: |
-                git config user.name "GitHub Actions Bot"
-                git config user.email "<>"
-                git add .
-                git commit -m "Update Prime Tokens" || echo "No changes to commit"
-                git push
+                PUBLIC_KEY: ${{ secrets.PRIME_TOKEN_PUBLIC_KEY }}
