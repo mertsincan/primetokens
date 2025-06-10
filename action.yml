@@ -15,6 +15,6 @@ inputs:
     default: "./"
     description: "Path to the output directory"
 runs:
-  using: "node18"
+  using: "node16"
   main: "dist/index.js"
 
