@@ -12,7 +12,6 @@
         "url": "https://github.com/primefaces/primetokens/issues"
     },
     "main": "dist/index.js",
-    "type": "module",
     "scripts": {
         "setup": "npm run clean && npm run init",
         "clean": "npx rimraf --glob **/node_modules **/dist ./package-lock.json",
