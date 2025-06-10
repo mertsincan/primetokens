@@ -6,12 +6,12 @@ import { cmd } from './utils';
 export async function run() {
     try {
         // inputs
-        const tokensPath = getInput('TOKENS_PATH');
-        const publicKey = getInput('PUBLIC_KEY');
-        const outputDir = getInput('OUTPUT_DIR');
+        const publicKey = getInput('public-key');
+        const tokensPath = getInput('tokens-path');
+        const outputDir = getInput('output-dir');
 
         if (!publicKey) {
-            setFailed('Required inputs are missing: PUBLIC_KEY');
+            setFailed('Required inputs are missing: public-key');
 
             return;
         }

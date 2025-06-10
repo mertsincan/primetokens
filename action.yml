@@ -2,15 +2,15 @@ name: "Prime Theme Tokens Generator"
 label: "Generate Theme Tokens"
 description: "Generates theme tokens for Prime users based on their public key."
 inputs:
-  PUBLIC_KEY:
+  public-key:
     type: "string"
     description: "Public key for authentication"
     required: true
-  TOKENS_PATH:
+  tokens-path:
     type: "string"
     default: "./tokens.json"
     description: "Path to the tokens file"
-  OUTPUT_DIR:
+  output-dir:
     type: "string"
     default: "./"
     description: "Path to the output directory"
