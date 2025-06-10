@@ -28,5 +28,6 @@ jobs:
               run: |
                 git config user.name "GitHub Actions Bot"
                 git config user.email "<>"
-                git commit -a -m "Update Prime Tokens" || echo "No changes to commit"
+                git add .
+                git commit -m "Update Prime Tokens" || echo "No changes to commit"
                 git push
