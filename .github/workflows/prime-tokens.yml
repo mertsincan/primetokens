@@ -19,6 +19,6 @@ jobs:
             - name: Generate Prime Tokens
               uses: mertsincan/primetokens@main
               with:
-                PUBLIC_KEY: ${{ secrets.PRIME_TOKEN_PUBLIC_KEY }}   # required public key for authentication
-                TOKENS_PATH: 'tokens.json'                          # default path
-                OUTPUT_DIR: './'                                    # default output directory
+                PUBLIC_KEY: ${{ secrets.PRIME_TOKEN_PUBLIC_KEY }}   # [required] public key for authentication
+                TOKENS_PATH: 'tokens.json'                          # [optional] path to tokens file
+                OUTPUT_DIR: './'                                    # [optional] output directory
