@@ -12,6 +12,8 @@ permissions:
 jobs:
     build:
         runs-on: ubuntu-latest
+        env:
+            PRIME_TOKEN: ${{ secrets.PRIME_TOKEN }}
         steps:
             - name: Checkout repository
               uses: actions/checkout@v3

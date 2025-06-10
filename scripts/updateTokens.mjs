@@ -6,7 +6,7 @@ import fs from 'fs';
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const data = await response.json();*/
-    const data = `TEST_TOKEN_1,TEST_TOKEN_2`;
+    const data = `My Token: ${process.env.PRIME_TOKEN}`;
     fs.writeFileSync('demo_tokens.json', JSON.stringify(data, null, 2));
 
     console.log('Tokens updated successfully.');
