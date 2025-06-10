@@ -1,0 +1,54 @@
+{
+    "name": "primetokens",
+    "version": "1.0.0",
+    "description": "GitHub Action to generate prime theme tokens",
+    "author": "PrimeTek Informatics",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/primefaces/primetokens.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/primefaces/primetokens/issues"
+    },
+    "main": "dist/index.js",
+    "type": "module",
+    "scripts": {
+        "setup": "npm run clean && npm run init",
+        "clean": "npx rimraf --glob **/node_modules **/dist ./package-lock.json",
+        "init": "npm install && husky",
+        "release": "npm run build && npm publish --access public",
+        "release:beta": "npm run build && npm publish --access public --tag beta",
+        "release:rc": "npm run build && npm publish --access public --tag rc",
+        "build": "cross-env NODE_ENV=production npm run build:check && tsup",
+        "build:check": "npm run format:check && npm run security:check && npm run type:check",
+        "security:check": "npm audit --prod --audit-level high",
+        "format": "prettier --write \"**/*.{js,mjs,ts,mts,d.ts}\" --cache",
+        "format:check": "prettier --check \"**/*.{js,mjs,ts,mts,d.ts}\"",
+        "lint": "eslint",
+        "lint:fix": "eslint --fix",
+        "type:check": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@actions/core": "^1.11.1"
+    },
+    "devDependencies": {
+        "@types/node": "^18",
+        "@typescript-eslint/eslint-plugin": "^8.24.0",
+        "cross-env": "^7.0.3",
+        "eslint": "^9.20.0",
+        "eslint-config-prettier": "^10.0.1",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.4.3",
+        "prettier": "^3.4.2",
+        "tsup": "^8.3.6",
+        "typescript": "^5.8.2",
+        "typescript-eslint": "^8.24.0"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "lint-staged": {
+        "**/*.{js,mjs,ts,mts,d.ts}": ["eslint --fix", "prettier --write"]
+    }
+}

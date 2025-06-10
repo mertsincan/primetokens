@@ -1,0 +1,20 @@
+name: "Prime Theme Tokens Generator"
+label: "Generate Theme Tokens"
+description: "Generates theme tokens for Prime users based on their public key."
+inputs:
+  PUBLIC_KEY:
+    type: "string"
+    description: "Public key for authentication"
+    required: true
+  TOKENS_PATH:
+    type: "string"
+    default: "./tokens.json"
+    description: "Path to the tokens file"
+  OUTPUT_DIR:
+    type: "string"
+    default: "./"
+    description: "Path to the output directory"
+runs:
+  using: "node18"
+  main: "dist/index.js"
+
