@@ -2,7 +2,7 @@ import fs from 'fs';
 
 (async () => {
   try {
-    /*const response = await fetch('https://example.com/api/tokens');
+    /*const response = await fetch('/tokens');
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
     const data = await response.json();*/
