@@ -1,4 +1,4 @@
-import core from '@actions/core';
+import { getInput, setFailed } from '@actions/core';
 import fs from 'node:fs';
 import path from 'node:path';
 import { cmd } from './utils';
@@ -6,12 +6,12 @@ import { cmd } from './utils';
 export async function run() {
     try {
         // inputs
-        const tokensPath = core.getInput('TOKENS_PATH');
-        const publicKey = core.getInput('PUBLIC_KEY');
-        const outputDir = core.getInput('OUTPUT_DIR');
+        const tokensPath = getInput('TOKENS_PATH');
+        const publicKey = getInput('PUBLIC_KEY');
+        const outputDir = getInput('OUTPUT_DIR');
 
         if (!publicKey) {
-            core.setFailed('Required inputs are missing: PUBLIC_KEY');
+            setFailed('Required inputs are missing: PUBLIC_KEY');
 
             return;
         }
@@ -71,6 +71,6 @@ export async function run() {
 
         cmd('git push');
     } catch (error) {
-        core.setFailed((error as Error).message);
+        setFailed((error as Error).message);
     }
 }
