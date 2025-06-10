@@ -4,10 +4,8 @@ export default defineConfig({
     entry: ['src/index.ts'],
     format: ['esm'],
     outDir: 'dist',
-    dts: false,
-    external: ['@actions/core', 'fs', 'path'],
-    sourcemap: true,
-    splitting: false,
+    external: [],
+    noExternal: ['@actions/core'],
     clean: true,
     minify: true,
     outExtension: () => ({
