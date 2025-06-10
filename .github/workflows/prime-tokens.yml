@@ -4,7 +4,7 @@ description: Update Prime Tokens
 on:
     push:
         paths:
-            - 'tokens.json'
+            - 'tokens2.json'
 
 permissions:
     contents: write
@@ -20,3 +20,5 @@ jobs:
               uses: mertsincan/primetokens@main
               with:
                 PUBLIC_KEY: ${{ secrets.PRIME_TOKEN_PUBLIC_KEY }}
+                TOKENS_PATH: 'tokens2.json'
+                OUTPUT_DIR: './dist'
