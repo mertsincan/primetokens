@@ -1,10 +1,10 @@
 {
-  "publicKey": "12345",
+  "apiKey": "12345",
   "aura/primitive": {
     "border": {
       "radius": {
         "none": {
-          "$value": "50",
+          "$value": "0",
           "$type": "borderRadius"
         },
         "xs": {
