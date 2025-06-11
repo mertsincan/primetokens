@@ -10,7 +10,6 @@ permissions:
 
 jobs:
   build:
-    name: Build Actions API
     runs-on: ubuntu-latest
 
     steps:
