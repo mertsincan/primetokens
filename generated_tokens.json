@@ -4,7 +4,7 @@
     "border": {
       "radius": {
         "none": {
-          "$value": "10",
+          "$value": "50",
           "$type": "borderRadius"
         },
         "xs": {
