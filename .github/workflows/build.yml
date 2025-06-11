@@ -1,0 +1,36 @@
+name: Build Actions API
+
+on:
+  push:
+    paths:
+      - '**/*.ts'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Actions API
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Run update script
+        run: |
+          npm install
+          npm run build
+
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          git add .
+          git commit -m "Update build" || echo "No changes to commit"
+          git push

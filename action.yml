@@ -1,10 +1,10 @@
 name: "Prime Theme Tokens Generator"
 label: "Generate Theme Tokens"
-description: "Generates theme tokens for Prime users based on their public key."
+description: "Generates theme tokens for Prime users based on their API key."
 inputs:
-  public-key:
+  api-key:
     type: "string"
-    description: "Public key for authentication"
+    description: "API key for authentication"
     required: true
   tokens-path:
     type: "string"

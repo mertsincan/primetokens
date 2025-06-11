@@ -6,12 +6,12 @@ import { cmd } from './utils';
 export async function run() {
     try {
         // inputs
-        const publicKey = getInput('public-key');
+        const apiKey = getInput('api-key');
         const tokensPath = getInput('tokens-path');
         const outputDir = getInput('output-dir');
 
-        if (!publicKey) {
-            setFailed('Required inputs are missing: public-key');
+        if (!apiKey) {
+            setFailed('Required inputs are missing: api-key');
 
             return;
         }
@@ -46,7 +46,7 @@ export async function run() {
         const tokensJson = JSON.parse(tokensRaw);
 
         const data = {
-            publicKey,
+            apiKey,
             ...tokensJson
         };
 
