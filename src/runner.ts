@@ -16,7 +16,8 @@ export async function run() {
             return;
         }
 
-        /*const response = await fetch(`${apiUrl}/theme/figma`, {
+        /*
+        const response = await fetch(`${apiUrl}/theme/figma`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,7 +41,8 @@ export async function run() {
             return;
         }
 
-        const data = await response.json();*/
+        const data = await response.json();
+        */
 
         const tokensRaw = fs.readFileSync(tokensPath, 'utf-8');
         const tokensJson = JSON.parse(tokensRaw);
