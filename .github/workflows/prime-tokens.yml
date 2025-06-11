@@ -1,6 +1,8 @@
 name: PrimeTokens
 
 on:
+    workflow_dispatch:
+
     push:
         paths:
             - 'tokens.json'
@@ -19,6 +21,6 @@ jobs:
             - name: Generate Prime Tokens
               uses: mertsincan/primetokens@main
               with:
-                public-key: ${{ secrets.PRIME_TOKEN_PUBLIC_KEY }}   # [required] public key for authentication
-                tokens-path: 'tokens.json'                          # [optional] path to tokens file
-                output-dir: './'                                    # [optional] output directory
+                api-key: ${{ secrets.PRIME_TOKEN_PUBLIC_KEY }}   # [required] api key for authentication
+                tokens-path: 'tokens.json'                       # [optional] path to tokens file
+                output-dir: './'                                 # [optional] output directory
